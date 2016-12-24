@@ -1,0 +1,84 @@
+/**
+ * 
+ */
+package com.subrat.Tree;
+
+
+
+/**
+ * @author sparida
+ *
+ */
+public class UniValTree {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		UniValTree UniValTree =new UniValTree();
+		
+		/*root=newNode(1);
+	    root->left=newNode(2);
+	    root->left->left=newNode(2);
+	    root->left->right=newNode(2);
+	    root->left->left->left=newNode(5);
+	    root->left->left->right=newNode(5);
+	    root->right=newNode(3);
+	    root->right->left=newNode(3);
+	    root->right->right=newNode(3);
+	    root->right->left->left=newNode(4);
+	    root->right->left->right=newNode(4);
+	    root->right->right->left=newNode(3);
+	    root->right->right->right=newNode(3);*/
+
+	}
+	private static class TreeNode{
+		private Integer data;
+		private TreeNode left;
+		private TreeNode right;
+		
+		
+		public TreeNode(Integer data){
+			this.data=data;
+		}
+
+
+		public Integer getData() {
+			return data;
+		}
+
+
+		public void setData(Integer data) {
+			this.data = data;
+		}
+
+
+		public TreeNode getLeft() {
+			return left;
+		}
+
+
+		public void setLeft(TreeNode left) {
+			this.left = left;
+		}
+
+
+		public TreeNode getRight() {
+			return right;
+		}
+
+
+		public void setRight(TreeNode right) {
+			this.right = right;
+		}
+
+
+		@Override
+		public String toString() {
+			return "TreeNode [data=" + data + ", left=" + left + ", right=" + right + "]";
+		}
+		
+		
+	}
+
+}

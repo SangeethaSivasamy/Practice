@@ -1,0 +1,331 @@
+/**
+ * 
+ */
+package com.subrat.linkedList;
+
+/**
+ * @author sparida
+ *
+ */
+public class MaximumfromEachSubarray 
+	{
+	    private class AVLTreeNode 
+	    {
+	        int data;
+	        AVLTreeNode left;
+	        AVLTreeNode right;
+	        int height;
+	        
+	        AVLTreeNode(int data)
+	        {
+	            this.data = data;
+	            this.height = 1;
+	        }
+	    }
+	    
+	    AVLTreeNode root;
+	    
+	    public MaximumfromEachSubarray()
+	    {
+	
+	    }
+	    
+	    private int getHeight(AVLTreeNode node)
+	    {
+	        if (node == null)
+	            return 0;
+	        
+	        return node.height;
+	    }
+	    
+	    private void updateHeight(AVLTreeNode node)
+	    {
+	        if (node == null) return;
+	        
+	        node.height = Math.max(getHeight(node.left), getHeight(node.right)) + 1;
+	    }
+	    
+	    
+	    private AVLTreeNode rotateRight(AVLTreeNode node)
+	    {
+	        if (node == null) return node;
+	        
+	        AVLTreeNode beta  = node.left;
+	        
+	        AVLTreeNode t2  = beta.right;
+	        
+	        beta.right = node;
+	        node.left = t2;
+        
+	         
+	        updateHeight(node);
+	        
+	         
+	        updateHeight(beta);
+	        
+	        return beta;
+58	    }
+59	    
+60	    
+61	    private AVLTreeNode rotateLeft(AVLTreeNode node)
+62	    {
+63	        if (node == null) return node;
+64	        
+65	        AVLTreeNode beta  = node.right;
+66	        AVLTreeNode t2  = beta.left;
+67	        
+68	        beta.left = node;
+69	        node.right = t2;
+70	        
+71	         
+72	        updateHeight(node);
+73	        
+74	         
+75	        updateHeight(beta);
+76	        
+77	        return beta;
+78	    }
+79	    
+80	    
+81	    private int getBalance(AVLTreeNode node)
+82	    {
+83	        if (node == null)
+84	        {
+85	            return 0;
+86	        }
+87	        int balance;
+88	        
+89	        balance = getHeight(node.left) - getHeight(node.right);
+90	        
+91	        return balance;
+92	    }
+93	    
+94	    
+95	    private int getMaxValue(AVLTreeNode node)
+96	    {
+97	         
+98	        if (node == null) return Integer.MIN_VALUE;
+99	        
+100	         
+101	        if (node.right == null) return node.data;
+102	        
+103	        return getMaxValue(node.right);
+104	    }
+105	    
+106	    private int getMinValue(AVLTreeNode node)
+107	    {
+108	         
+109	        if (node == null) return Integer.MIN_VALUE;
+110	        
+111	         
+112	        if (node.right == null) return node.data;
+113	        
+114	        return getMaxValue(node.left);
+115	    }
+116	    
+117	    private AVLTreeNode delete(AVLTreeNode node, int key)
+118	    {
+119	         
+120	        if (node == null) return null;
+121	        
+122	        if (key < node.data)
+123	        {
+124	            node.left = delete(node.left, key);
+125	        }
+126	        else if (key > node.data)
+127	        {
+128	            node.right = delete(node.right, key);
+129	        }
+130	        
+131	        else  
+132	        {
+133	             
+134	            if (node.left == null)
+135	            {
+136	                node = node.right;
+137	            }
+138	            else if (node.right == null)
+139	            {
+140	                node = node.left;
+141	            }
+142	            
+143	             
+144	             
+145	             
+146	            else
+147	            {
+148	                int inorderSuccessorValue = getMinValue(node.right);
+149	                node.data = inorderSuccessorValue;
+150	                node.right = delete(node.right, inorderSuccessorValue);
+151	            }
+152	        }
+153	
+154	         
+155	        if (node == null)
+156	        {
+157	            return null;
+158	        }
+159	        
+160	         
+161	        updateHeight(node);
+162	        
+163	         
+164	        int balance = getBalance(node);
+165	        
+166	        if (balance > 1)  
+167	        {
+168	            if (getBalance(node.left) >= 0)  
+169	            {
+170	                node = rotateRight(node);
+171	            }
+172	            else  
+173	            {
+174	                node.left = rotateLeft(node.left);
+175	                node = rotateRight(node);
+176	            }
+177	        }
+178	        
+179	        else if (balance < -1)  
+180	        {
+181	            if (getBalance(node.right) <= 0)  
+182	            {
+183	                node = rotateLeft(node);
+184	            }
+185	            else  
+186	            {
+187	                node.right = rotateRight(node.right);
+188	                node = rotateLeft(node);
+189	            }
+190	        }
+191	        return node;
+192	    }
+193	    
+194	    
+195	    private AVLTreeNode insert(AVLTreeNode node, int key)
+196	    {
+197	         
+198	        if (node == null)
+199	        {
+200	            this.root =  new AVLTreeNode(key);
+201	            return this.root;
+202	        }
+203	        
+204	        if (key < node.data)
+205	        {
+206	            node.left = insert(node.left, key);
+207	        }
+208	        else if (key > node.data)
+209	        {
+210	            node.right = insert(node.right, key);
+211	        }
+212	        else
+213	        {
+214	            return node;
+215	        }
+216	        
+217	         
+218	        updateHeight(node);
+219	        
+220	         
+221	        int balance = getBalance(node);
+222	        
+223	        if (balance > 1)  
+224	        {
+225	            if (key < node.left.data)  
+226	            {
+227	                node = rotateRight(node);
+228	            }
+229	            else  
+230	            {
+231	                node.left = rotateLeft(node.left);
+232	                node = rotateRight(node);
+233	            }
+234	        }
+235	        
+236	        else if (balance < -1)  
+237	        {
+238	            if (key > node.right.data)  
+239	            {
+240	                node = rotateLeft(node);
+241	            }
+242	            else  
+243	            {
+244	                node.right = rotateRight(node.right);
+245	                node = rotateLeft(node);
+246	            }
+247	        }
+248	        return node;
+249	    }
+250	    
+251	    
+252	    public void insert(int key)
+253	    {
+254	        root = insert(this.root, key);
+255	        return;
+256	    }
+257	    
+258	    
+259	    public void delete(int key)
+260	    {
+261	        root = delete(this.root, key);
+262	        return;
+263	    }
+264	    
+265	
+266	    private void printMax(int[] array, int low, int high)
+267	    {
+268	        int maxValue = Integer.MIN_VALUE;
+269	        for (int i = low; i <= high; i++)
+270	        {
+271	            if (array[i] > maxValue)
+272	            {
+273	                maxValue = array[i];
+274	            }
+275	        }
+276	        
+277	        System.out.println(maxValue);
+278	    }
+279	    
+280	    public void simplePrintMaxfromEachSubarray(int[] array, int k)
+281	    {
+282	         
+283	        
+284	        int low = 0, high = low + k - 1;
+285	        
+286	        while (high < array.length)
+287	        {
+288	            printMax(array, low, high);
+289	            low  += 1;
+290	            high += 1;
+291	        }
+292	    }
+293	    
+294	    public void printMaxfromEachSubarray(int[] array, int k)
+295	    {
+296	         
+297	        for (int i = 0; i < k; i++)
+298	        {
+299	            insert(array[i]);
+300	        }
+301	         
+302	        System.out.println(getMaxValue(root));
+303	        
+304	         
+305	        for (int i = 0; i < array.length-k; i++)
+306	        {
+307	            delete(array[i]); 
+308	            insert(array[i+k]);
+309	            System.out.println(getMaxValue(root));
+	        }
+	    }
+	
+	    public static void main(String[] args)
+	    {
+	        MaximumfromEachSubarray solution = new MaximumfromEachSubarray();
+	
+	        int[] array = {4,2,12,34,23,35,44,55};
+	        int k = 3;	        
+	        System.out.println("Maximum elements from each sub-array of specified size are - " );
+	        solution.printMaxfromEachSubarray(array, k);
+	    }
+	}

@@ -1,0 +1,30 @@
+/**
+ * 
+ */
+package com.subrat.graph;
+
+import java.util.LinkedList;
+
+/**
+ * @author sparida
+ *
+ */
+public class TopologicalSort {
+	
+	private Integer v;
+	private LinkedList[] adjList;
+	
+	public TopologicalSort(Integer V){
+		this.v=V;
+		adjList = new LinkedList[v];
+	}
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+
+	}
+
+}

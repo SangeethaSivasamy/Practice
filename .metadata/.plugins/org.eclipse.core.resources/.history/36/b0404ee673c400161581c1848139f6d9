@@ -1,0 +1,34 @@
+/**
+ * 
+ */
+package com.subrat.graph;
+
+import java.util.LinkedList;
+
+/**
+ * @author sparida
+ *
+ */
+public class GraphDFS {
+	private int v;
+	private LinkedList[]  adjList;
+	
+	public GraphDFS(int v){
+		this.v=v;
+		adjList = new LinkedList[v];
+		for (int i = 0; i < v; i++) {
+			adjList[i] = new LinkedList<>();
+			
+		}
+		
+	}
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		GraphDFS graphDFS = new GraphDFS(4);
+
+	}
+
+}

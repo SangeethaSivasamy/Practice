@@ -1,0 +1,145 @@
+/**
+ * 
+ */
+package com.subrat.Tree;
+
+/**
+ * @author sparida
+ *
+ */
+public class SizeLargestBST 
+	{
+	    class TreeNode
+	    {
+	        TreeNode left;
+	        TreeNode right;
+	        int data;
+	    
+	        public TreeNode(int x)
+	        {
+	            this.data = x;
+	        }
+	    }
+	
+	    TreeNode root;
+	
+	    private int minimum(int a, int b)
+	    {
+	        if (a < b) return a;
+	        return b;
+	    }
+	
+	    private int maximum(int a, int b)
+	    {
+	        if (a > b) return a;
+	        return b;
+	    }
+	
+	
+	     
+	    private TreeNode createTree()
+	    {
+	        this.root = new TreeNode(10);
+	        TreeNode n1   = new TreeNode(6);
+	        TreeNode n2   = new TreeNode(12);
+	        TreeNode n3   = new TreeNode(7);
+	        TreeNode n4   = new TreeNode(4);
+	        TreeNode n5   = new TreeNode(9);
+	        TreeNode n6   = new TreeNode(14);
+	        TreeNode n7   = new TreeNode(13);
+	        TreeNode n8   = new TreeNode(16);
+	        
+	        root.left  = n1;
+	        root.right = n2;
+45	        
+46	        n1.left  = n3;
+47	        n1.right = n4;
+48	        
+49	        n2.left  = n5;
+50	        n2.right = n6;
+51	        
+52	        n6.left = n7;
+53	        n6.right = n8;
+54	        
+55	        return root;
+56	    }
+57	     
+58	    private int findSizeOfLargestBST(TreeNode currentNode, int[] min, int[] max, boolean[] isBST, int[] maxBSTSize)
+59	    {
+60	        min[0] = Integer.MAX_VALUE;
+61	        max[0] = Integer.MIN_VALUE;
+62	        
+63	        if (currentNode == null)
+64	        {
+65	            isBST[0] = true;
+66	            return 0;
+67	        }
+68	        
+69	         
+70	         
+71	        int leftTreeSize = findSizeOfLargestBST(currentNode.left, min, max, isBST, maxBSTSize);
+72	        
+73	         
+74	        boolean isLeftValid = isBST[0] && (max[0] < currentNode.data);
+75	
+76	         
+77	        int tempMin = minimum(currentNode.data, min[0]);
+78	        int tempMax = maximum(currentNode.data, max[0]);
+79	        
+80	         
+81	         
+82	        int rightTreeSize = findSizeOfLargestBST(currentNode.right, min, max, isBST, maxBSTSize);
+83	        
+84	         
+85	        boolean isRightValid = isBST[0] && (currentNode.data < min[0]);
+86	
+87	         
+88	         
+89	        min[0] = minimum(tempMin, min[0]);
+90	        max[0] = maximum(tempMax, max[0]);
+91	        
+92	         
+93	        if (isLeftValid && isRightValid)
+94	        {
+95	             
+96	            isBST[0] = true;
+97	            
+98	             
+99	            if ((1 + leftTreeSize + rightTreeSize) > maxBSTSize[0]) 
+100	            {
+101	                maxBSTSize[0] = (1 + leftTreeSize + rightTreeSize);
+102	            }
+103	            
+104	            return (1 + leftTreeSize + rightTreeSize);
+105	        }
+106	        
+107	         
+108	        isBST[0] = false;
+109	        return -1;
+110	    }
+111	    
+112	    public void findLargestBST(int[] maxBSTSize)
+113	    {
+114	        int[] min = new int[1];
+115	        int[] max = new int[1];
+116	        
+117	        boolean[] isBST = new boolean[1];
+118	        
+119	        findSizeOfLargestBST(root, min, max, isBST, maxBSTSize);
+120	    }
+121	    
+122	    
+123	    public static void main(String[] args)
+124	    {
+125	        SizeLargestBST solution = new SizeLargestBST();
+126	
+127	         
+128	        solution.createTree();
+129	
+130	        int[] maxBSTSize = new int[1];
+131	
+132	        solution.findLargestBST(maxBSTSize);
+133	
+134	        System.out.println(maxBSTSize[0]);
+135	    }
+136	}

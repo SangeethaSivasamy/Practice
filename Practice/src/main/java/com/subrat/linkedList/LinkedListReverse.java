@@ -45,9 +45,9 @@ public class LinkedListReverse {
 			curr.setNextNode(pre);
 			pre=curr;
 		}
-		head=curr;
+		//head=pre;
 		LinkedListReverse linkedListReverse = new LinkedListReverse();
-		linkedListReverse.printList(head);
+		linkedListReverse.printList(pre);
 		
 	}
 

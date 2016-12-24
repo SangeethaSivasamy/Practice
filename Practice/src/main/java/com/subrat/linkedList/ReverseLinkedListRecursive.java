@@ -32,7 +32,11 @@ public class ReverseLinkedListRecursive {
 	            return;
 	        }
 	 
-	        reverseLinkedListRecursive(curr.getNext());
+	        reverseLinkedListRecursive(curr.getNext());// this line store node 1 and 2 in the stack
+	        /*
+	         * in the stack 1 and 2 are there,so, when the below line executes, basically curr means node 2, 2.getnext is equal to 3 and 3.setNext(curr) means 3 will point to 2
+	         * and similarlly 2 will point to 1
+	         */
 	        curr.getNext().setNext(curr);
 	        curr.setNext(null);
 	    }         
@@ -40,7 +44,7 @@ public class ReverseLinkedListRecursive {
 	    public static void main(String[] args) {
 	         
 	        ReverseLinkedListRecursive list = new ReverseLinkedListRecursive();
-	        list.createTestList(5);
+	        list.createTestList(3);
 	        list.printlist();
 	        list.reverseLinkedListRecursive();
 	        list.printlist();

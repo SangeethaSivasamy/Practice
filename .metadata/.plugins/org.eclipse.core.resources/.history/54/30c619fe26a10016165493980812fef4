@@ -1,0 +1,32 @@
+/**
+ * 
+ */
+package com.subrat.linkedList;
+
+import java.util.HashMap;
+import java.util.Map;
+
+/**
+ * @author sparida
+ *
+ */
+public class ValidParenthesis {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+		ValidParenthesis validParenthesis = new ValidParenthesis();
+		boolean isValid = validParenthesis.isValid("[{()}]");
+	}
+
+	private boolean isValid(String string) {
+		if(string.isEmpty()){
+			return true;
+		}
+		Map<Character,Character> map = new HashMap<>();
+		return false;
+	}
+
+}

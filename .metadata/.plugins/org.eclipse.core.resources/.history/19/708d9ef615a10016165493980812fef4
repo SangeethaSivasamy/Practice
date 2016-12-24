@@ -1,0 +1,20 @@
+/**
+ * 
+ */
+package com.subrat.linkedList;
+
+/**
+ * @author sparida
+ *
+ */
+public class ZipLinkedList {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+
+	}
+
+}

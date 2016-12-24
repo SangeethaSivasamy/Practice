@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="com.subrat.linkedList.Node"/>
+<fullyQualifiedTypeName name="com.subrat.graph.DFSInAGraph"/>
+<fullyQualifiedTypeName name="com.subrat.graph.DFSInAGraphPractice"/>
+<fullyQualifiedTypeName name="java.lang.Iterable"/>
+<fullyQualifiedTypeName name="java.beans.Visibility"/>
+<fullyQualifiedTypeName name="java.util.Iterator"/>
+<fullyQualifiedTypeName name="com.subrat.linkedList.RemoveDuplicatesInALinkedList.Node"/>
+<fullyQualifiedTypeName name="com.subrat.linkedList.RemoveDuplicatesInALinkedList2ndWay.Node"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="java.util.Map"/>
+<fullyQualifiedTypeName name="com.subrat.rucachepractice.Node"/>
+<fullyQualifiedTypeName name="com.subrat.rucachepractice.LRUCachePractice"/>
+<fullyQualifiedTypeName name="com.subrat.rucachepractice.DoubleLinkedList"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="com.subrat.linkedList.MergeTwoLinkedList.Node"/>
+<fullyQualifiedTypeName name="java.util.Arrays"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.util.Queue"/>
+<fullyQualifiedTypeName name="java.util.LinkedList"/>
+<fullyQualifiedTypeName name="java.util.Stack"/>
+</qualifiedTypeNameHistroy>

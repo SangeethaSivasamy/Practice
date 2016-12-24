@@ -1,0 +1,42 @@
+/**
+ * 
+ */
+package com.subrat.linkedList;
+
+/**
+ * @author sparida
+ *
+ */
+public class CloneALinkedList {
+	
+	
+	public static void main(String[] args) {
+		
+
+	}
+
+	private static void printList(Node head) {
+		
+	}
+	
+	
+	private static class Node<T>{
+		private T data;
+		private Node next;
+		private Node random;
+		
+		public Node(T data){
+			this.data=data;
+			this.next=null;
+			this.random=null;
+		}
+
+		@Override
+		public String toString() {
+			return "Node [data=" + data + ", next=" + next + ", random=" + random + "]";
+		}
+		
+		
+	}
+
+}

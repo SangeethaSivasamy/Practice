@@ -1,0 +1,45 @@
+/**
+ * 
+ */
+package com.subrat.linkedList;
+
+/**
+ * @author sparida
+ *
+ */
+public class SplitALinkedListAlternatively {
+	
+	private static Node head;
+	
+	private static class Node{
+		private Integer data;
+		private Node next;
+		
+		public Node(Integer data){
+			this.data=data;
+			this.next=null;
+		}
+
+		@Override
+		public String toString() {
+			return "Node [data=" + data + ", next=" + next + "]";
+		}
+		
+		
+	}
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+		SplitALinkedListAlternatively splitALinkedListAlternatively = new SplitALinkedListAlternatively();
+		splitALinkedListAlternatively.split(head);
+	}
+
+	private void split(Node head2) {
+		
+		
+	}
+
+}

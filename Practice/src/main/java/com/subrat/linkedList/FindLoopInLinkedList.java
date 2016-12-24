@@ -12,7 +12,7 @@ package com.subrat.linkedList;
 //move one pointer with normal speed and another with double speed
 //if both pointers meets at some point, we have found the loop
 //Now find the loop length
-//at the point where both pointers have met, stop one pointer and keep moving the nother one
+//at the point where both pointers have met, stop one pointer and keep moving the other one
 //when another pointer meets the first pointer, stop. 
 //keep counting number of hops, that will your loop length
 //Now To break the loop

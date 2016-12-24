@@ -11,6 +11,8 @@ import java.util.Map;
  *
  */
 public class RemoveDuplicatesFromLinkedList {
+	
+	private static Node head;
 
 	/**
 	 * @param args
@@ -25,7 +27,7 @@ public class RemoveDuplicatesFromLinkedList {
 		node.nextNode.nextNode.nextNode.nextNode.nextNode=new Node(1);
 		node.nextNode.nextNode.nextNode.nextNode.nextNode.nextNode=new Node(4);
 		removeDuplicatesFromLinkedList.displayList(node);
-		Node head = removeDuplicatesFromLinkedList.removeDuplicates(node);
+		removeDuplicatesFromLinkedList.removeDups(node);
 		removeDuplicatesFromLinkedList.displayList(head);
 		
 
@@ -80,6 +82,21 @@ public class RemoveDuplicatesFromLinkedList {
 		
 		return slow;
 		
+		
+	}
+	
+	public void removeDups(Node n) {
+	    while (n != null) {
+	        Node curr = n;
+	        while (curr.nextNode != null) {
+	            if (curr.nextNode.data == n.data) {
+	                curr.nextNode = curr.nextNode.nextNode;
+	            } else {
+	                curr = curr.nextNode;
+	            }
+	        }
+	        n = n.nextNode;
+	    }
 		
 	}
 
