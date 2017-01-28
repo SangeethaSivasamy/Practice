@@ -43,6 +43,7 @@ public class SortedLinkedListToBalancedBST {
 		int n = countNodes(head);
 
 		/* Construct BST */
+		//return sortedListToBSTRecur(n);
 		return sortedListToBSTRecur(n);
 	}
 
@@ -140,7 +141,7 @@ public class SortedLinkedListToBalancedBST {
 		SortedLinkedListToBalancedBST llist = new SortedLinkedListToBalancedBST();
 		/*
 		 * Let us create a sorted linked list to test the functions Created
-		 * linked list will be 7->6->5->4->3->2->1
+		 * linked list will be 1->2->3->4->5->6->7->null
 		 */
 		llist.push(7);
 		llist.push(6);

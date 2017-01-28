@@ -3,8 +3,7 @@
  */
 package com.subrat.linkedList;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.HashSet;
 
 /**
  * @author sparida
@@ -20,6 +19,7 @@ public class RemoveDuplicatesFromLinkedList {
 	public static void main(String[] args) {
 		RemoveDuplicatesFromLinkedList removeDuplicatesFromLinkedList = new RemoveDuplicatesFromLinkedList();
 		Node node = new Node(2);
+		removeDuplicatesFromLinkedList.head=node;
 		node.nextNode = new Node(2);
 		node.nextNode.nextNode = new Node(5);
 		node.nextNode.nextNode.nextNode = new Node(3);
@@ -28,6 +28,7 @@ public class RemoveDuplicatesFromLinkedList {
 		node.nextNode.nextNode.nextNode.nextNode.nextNode.nextNode=new Node(4);
 		removeDuplicatesFromLinkedList.displayList(node);
 		removeDuplicatesFromLinkedList.removeDups(node);
+		//removeDuplicatesFromLinkedList.removeDuplicatess(node);
 		removeDuplicatesFromLinkedList.displayList(head);
 		
 
@@ -61,29 +62,22 @@ public class RemoveDuplicatesFromLinkedList {
 		
 	}*/
 	
-	private Node removeDuplicates(Node node) {
-		
-		if(node==null){
-			return null;
-		}
-		
-		Node slow = node;
-		Node fast = node.nextNode;
-		
-		while(fast!=null){
-			if(slow.data==fast.data){
-				slow.nextNode=fast.nextNode;
-				fast=fast.nextNode;
-			}else{
-				slow=slow.nextNode;
-				fast=fast.nextNode;
-			}
-		}
-		
-		return slow;
-		
-		
+	public void removeDuplicatess(Node n) {
+	    HashSet<Integer> nodes = new HashSet<Integer>();
+	    Node prev = null;
+	    while (n != null) {
+	        if (nodes.contains(n.data)) {
+	            prev.nextNode= n.nextNode;
+	        } else {
+	            nodes.add(n.data);
+	            prev = n;
+	        }
+	        n = n.nextNode;
+	    }
+	    prev.nextNode = null;
 	}
+	
+	
 	
 	public void removeDups(Node n) {
 	    while (n != null) {

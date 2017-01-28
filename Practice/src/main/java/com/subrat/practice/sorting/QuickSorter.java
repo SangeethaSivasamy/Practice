@@ -4,6 +4,14 @@ package com.subrat.practice.sorting;
 
 import java.util.Arrays;
 
+/*
+ * This sorting is best explained in the below vedio
+ * https://www.udemy.com/introduction-to-data-structures-algorithms-in-java/learn/v4/t/lecture/805548
+ * 
+ * 
+ * 
+ */
+
 public class QuickSorter {
 	
 	public void sort(Integer[] data) {

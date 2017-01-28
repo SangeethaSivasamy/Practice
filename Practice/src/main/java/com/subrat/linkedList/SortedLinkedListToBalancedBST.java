@@ -30,8 +30,8 @@ public class SortedLinkedListToBalancedBST {
 	  lln5.setNext(lln6);
 	  lln6.setNext(lln7);
 	   
-	  Node balancedBSTTopDown = sortedLinkedListToBalancedBSTTopDown(head);
-	  printTreeInOrder(balancedBSTTopDown);
+	  /*Node balancedBSTTopDown = sortedLinkedListToBalancedBSTTopDown(head);
+	  printTreeInOrder(balancedBSTTopDown);*/
 	 
 	  Node balancedBSTBottomUp = sortedLinkedListToBalancedBSTBottomUp(head);
 	  printTreeInOrder(balancedBSTBottomUp);

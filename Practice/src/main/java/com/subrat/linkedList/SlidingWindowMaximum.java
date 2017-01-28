@@ -3,6 +3,7 @@
  */
 package com.subrat.linkedList;
 
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
@@ -26,8 +27,8 @@ public class SlidingWindowMaximum {
         };
 
         int[] res = new int[nums.length - k + 1];
-        PriorityQueue<Integer> pq = new PriorityQueue<>(k, comparator);
-
+        PriorityQueue<Integer> pq = new PriorityQueue<>(k, comparator); // or PriorityQueue<Integer> pq = new PriorityQueue<>(k, Collections.reverseOrder());
+        
         int i = 0;
         int count = 0;
         while (i <= nums.length - k) {

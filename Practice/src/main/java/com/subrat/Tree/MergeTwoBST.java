@@ -100,13 +100,11 @@ public class MergeTwoBST
 
         int[] arr2 = {2,4,  6,  8,  15};
         Node node2 = arrayToBST(arr2, 0, arr2.length-1);
-        
         printBST(node2);
         System.out.println();
 
 
         Node node = merge(node1, node2);
-
         printBST(node);
         System.out.println();
     }

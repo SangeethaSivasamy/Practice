@@ -19,7 +19,8 @@ public class ValidParenthesis {
 	public static void main(String[] args) {
 		
 		ValidParenthesis validParenthesis = new ValidParenthesis();
-		boolean isValid = validParenthesis.isValid("[{()}]");
+		//boolean isValid = validParenthesis.isValid("[{()}]");
+		boolean isValid = validParenthesis.isValid("[{(}]");
 		//boolean isValid = validParenthesis.isValid("("( ( 1 + 2 ) * 3 )")");
 		System.out.println(isValid);
 	}

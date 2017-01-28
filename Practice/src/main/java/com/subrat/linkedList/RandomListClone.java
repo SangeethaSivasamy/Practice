@@ -1,5 +1,6 @@
 /**
- * 
+ *   https://www.youtube.com/watch?v=xF9goDxk5nM
+ *   http://www.byte-by-byte.com/randomlinkedlist/
  */
 package com.subrat.linkedList;
 

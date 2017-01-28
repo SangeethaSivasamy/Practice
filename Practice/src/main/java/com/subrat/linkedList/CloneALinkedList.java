@@ -76,7 +76,16 @@ public class CloneALinkedList {
 	 
 	    return copy;
 	}
-	 
+	
+	/*original list is 1->2->3->4->null, insert 1,2,3,4 in this list, so it will be 1->1->2->2->3->3->4->4->null , v represents random pointer.
+	                   v  v  v  v                                                   v     v     v     v
+	                   3  1  3  2                                                   3     1     3     2
+	                   
+	                   *so the logic will be nCurr.next.random = nCurr.random.next, for example, take first node 1, 1 next is 1 and it's random will be random of next of 1
+	                   *random of 1 is 3 and next of 3 is 3 
+	                   *
+	                   *
+	                   */
 	public static Node cloneNoExtraSpace(Node n) {
 	    if (n == null) return n;
 	 

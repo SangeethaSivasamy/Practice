@@ -5,6 +5,9 @@ package com.subrat.linkedList;
 
 /**
  * @author sparida
+ * 
+ * I/P------->    1->2->3->4->5->6->null
+   O/P------->    1->6->2->5->3->4->null
  *
  */
 public class ZipLinkedListWorking {

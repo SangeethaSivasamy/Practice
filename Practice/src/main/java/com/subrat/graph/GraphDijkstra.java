@@ -7,6 +7,8 @@ package com.subrat.graph;
  * @author sparida
  * 
  * https://www.youtube.com/watch?v=cbow7Y2uDq8
+ * 
+ * one more way of doing this is ----> https://discuss.leetcode.com/topic/20965/java-solution-using-dijkstra-s-algorithm-with-explanation/2
  *
  */
 import java.util.ArrayList;

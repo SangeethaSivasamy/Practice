@@ -64,7 +64,7 @@ public class PrintBinaryTreeInVerticalOrder {
 	 
 	   //Checking whether Left child and Right child are present for root Node. 
 	   if(rootNode.getLeft()!=null && rootNode.getRight()!=null){
-	    //Left and Right Child exist, Also, we need to add ne Node in Sequential Fashion of Left and Right, 
+	    //Left and Right Child exist, Also, we need to add the Node in Sequential Fashion of Left and Right, 
 	    //We have to scan all Levels one by one to check a proper place for new Node.
 	    //Also, we for each and every node we need to check whether Left and Right Exist, 
 	    //So we need to store them for later Processing that is why we introduced Queue.

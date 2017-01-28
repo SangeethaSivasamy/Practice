@@ -11,7 +11,7 @@ import java.util.ArrayList;
  */
 public class PalindromePartitioning {
 	
-	public ArrayList<ArrayList<String>> partition(String s) {
+	private ArrayList<ArrayList<String>> partition(String s) {
 		ArrayList<ArrayList<String>> result = new ArrayList<ArrayList<String>>();
 	 
 		if (s == null || s.length() == 0) {
