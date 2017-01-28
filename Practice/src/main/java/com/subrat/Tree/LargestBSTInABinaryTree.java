@@ -22,7 +22,7 @@ class Value {
 
 }
 
-class BinaryTree {
+class LargestBSTInABinaryTree {
 
 	static Node root;
 	Value val = new Value();
@@ -130,7 +130,7 @@ class BinaryTree {
 		 * / \ 45 65 80
 		 */
 
-		BinaryTree tree = new BinaryTree();
+		LargestBSTInABinaryTree tree = new LargestBSTInABinaryTree();
 		tree.root = new Node(50);
 		tree.root.left = new Node(10);
 		tree.root.right = new Node(60);

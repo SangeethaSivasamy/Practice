@@ -1,0 +1,37 @@
+Design URL Shortner (Bitly company does this operation, disign object model for Bitly company. 
+it takes long URL and give a corresponding short url).
+
+
+1- How many URLs it will support
+2-Length of Long URLs it will support
+3-Length of short URLs it will support
+4-Response Time/Latency
+5-How many days URL will be in the database (answer is basically url will be there in the database but after a
+  particular days the url will be inactive).
+6-security
+7-Monitoring system
+8-uptime of the application(four 9-->99.99%(good application), five 9(99.999%)-->means application is very good 
+  like google, three 9(99.9%)-->application has lots of issues) 
+9-Disaster recovery  
+  
+  
+  
+ database design------->>>>>>>>>
+ 
+ 1- database shading
+ use databse concept called shading(take the example of shading-->we have a to z(26 character), 0 to 9(10 digit))
+ total 36, so if the url first chaacter is a to j, send it to first database, like wise k to t, send it to
+ another database, like this, we can take many databse and store data.
+ 
+ 2- master slave application(we can design in such a way that, for example one master and 20 slave
+   , when we are creating something, we will create it in master and it will sync to all it's slave
+    and all the get operation will heat only the slaves(not the master)), if master goes down, one of the slave
+    will take over and work as a master. this master-slave concept,by using this concept, we are scaling 
+    read operation,similarly we have master-master concept as well which scale post/put/ operation(here we will have
+    more than 1 masters), here in master-master concept, we will write only in one master and after that
+    it will sync to other masters as well. 
+  
+  OverAll project structure------->>>>>>>> 
+    API-->Backend--->Database
+    
+    Use hashing(MD5) for converting long URL to short

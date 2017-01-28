@@ -1,0 +1,21 @@
+There are n no of servers, we need to collect logs and put it in a centralised system and if there is any error
+then alert some team.
+
+
+1- How often, we need to collect logs and what will be the size of logs.
+2- end to end latency (when the logs is available in the centralised system and the time when it is ready
+   to be quired).
+3-Time to Live(TTL) of the logs
+
+
+ELK---> Elastic search(based on solar(for the below para descriptions,
+        Elastic search is Receiver+storage+Indexer)),
+        log stash(work as the agent/process who gathers the logs
+        from the servers and it sits in the server, plz read the below paragraph) , 
+        Kibana(mostly used for presenting)
+
+
+1---->>>>  There are n servers available, there would be n agents/process sitting in all the servers which will gather 
+logs from these n servers, process it and send it to a receiver, once receiver receives all the data, it will
+send the data to a storage and storage send it to Indexer which will index it so, that it will be ready/easy
+for quired. At last the presenter will present the data.

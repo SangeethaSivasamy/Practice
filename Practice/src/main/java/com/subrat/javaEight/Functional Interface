@@ -1,0 +1,64 @@
+Q--> What is the type of Lambda Expression?
+
+Answer --> Functional Interface
+
+Q--> can Lambda be put in a variable?
+
+Answer --> Yes
+For Example -->Comparator<String> comparatorLambda = (String o1, String o2) -> 
+		Integer.compare(o1.length(), o2.length());
+		
+Q--> Is a lambda expression an object?
+Answer--> The answer is complex but No
+Excat answer is --> a lambda is an object without an identity.
+
+See the example as below
+
+Comparator<String> comparator = new Comparator<String>() {
+			@Override
+			public int compare(String o1, String o2) {
+				return Integer.compare(o1.length(), o2.length());
+			}
+		};*
+		
+Comparator<String> comparatorLambda = (String o1, String o2) -> 
+		Integer.compare(o1.length(), o2.length());	
+		
+both the piece of code is doing the same thing, one using annonymous class and other using lambda expression.
+the exact difference betw them is , in annonymous class, there is a new key word(i.e, it needs memory, clear the memory
+intialize static variable, initialize static blocks, intialize non-static variable, initialize non-static blocks
+and lot of things but in case of lambda, we don't require all this over head so faster).		
+
+1-Functional interface is the type for Lambda expression. 
+2-Functional interface has only one abstract method.
+3-we can annotate (@FunctionalInterface) in a functionalInterface and this annotation is optional.
+4-A lambda cab be taken as a method parameter and can be returned by method.
+
+
+
+Q--> Can i process data with lambda?
+Answer--> Yes, please see the below ForEach block
+ForEach---------->
+
+Ex-->
+List<Customer> list=....;
+list.forEach(customer -> System.out.println(customer));
+
+OR
+
+List<Customer> list=....;
+list.forEach(System.out::println);
+
+---->As of java 7, we can put constant (public static final) in interface but can't put static method in interface but java 8 allows static method in the interface.
+----> java 8 also allows default method(default keyword) in the interface which is kind of implementation of the method inside the interface.
+
+-->Stream can't hold any data at all.
+
+---> Optional is a wrapper class introduce in java 8 (it is similar to Integer,Long,Double etc), If we don't know what is the value then, we use Optional wrapper class.
+
+
+
+
+
+
+

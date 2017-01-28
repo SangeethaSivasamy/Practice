@@ -1,0 +1,7 @@
+1-Scatter and gather - it's kind of map reducer algorithm, Ex- in Bay area, we are collecting some data, so,
+  from different places in bay area(sfo, san jose etc), dispatcher will give the task to differnt task will gather the data and at last it will get
+  combined and produce the final data
+
+2-Load balancer - server load balancer, client load balancer, s/w load balancer,hardware load balancer
+
+3-CDNs - 

@@ -1,0 +1,49 @@
+def findMissingIn4Billion(inputFile):
+	#we have a total 2^32 numbers
+	#divide into 2^16 bins where each bin will
+	#have 65536 numbers
+
+	#have a 32 bit counter for each bin
+	#i.e 2^16 * 2^2 (4 bytes) = 262144 = 256 kB
+
+	numBins = 65536
+	bins = [0] * numBins
+
+	#open the file in read mode
+	with open(inputFile, 'r') as f:
+		#iterate a line at a time
+		#increment respective bin
+		for number in f:
+			bins[number // numBins] += 1
+
+	binNum = 0
+	#iterate through the bins
+	for i in range(0, numBins):
+		#if there is a bin with less than max count
+		if bins[i] < 65536:
+			#mark that bin
+			binNum = i
+			break
+
+	#create an array of indices
+	numIndex = [0] * numBins
+
+	#read file again
+	with open(inputFile, 'r') as f:
+		#for every number in the file
+		for number in f:
+			# if the number falls in the bin identified earlier
+			if number // numBins == binNum:
+				#mark its offset
+				numIndex[number % numBins] = 1
+
+	#run through the index array
+	for i in range(0, numBins):
+		#if index is not set
+		if not numIndex[i]:
+			#thats the missing numer
+			#add the number's offset to its index
+			missingNum = (binNum * 65536) + i
+			break
+
+	print missingNum
