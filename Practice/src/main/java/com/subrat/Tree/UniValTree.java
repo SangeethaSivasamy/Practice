@@ -15,6 +15,7 @@ package com.subrat.Tree;
 public class UniValTree {
 	
 	private static TreeNode root;
+	static int count = 0;
 
 	/**
 	 * @param args
@@ -34,14 +35,39 @@ public class UniValTree {
 		uniValTree.root.right.left.right=new TreeNode(4);
 		uniValTree.root.right.right.left=new TreeNode(3);
 		uniValTree.root.right.right.right=new TreeNode(3);
-		//Integer no =uniValTree.uniqueValueCount(root);
-		Integer no =uniValTree.countUnivalSubtrees(root);
-		System.out.println(no);
+		//Integer no =uniValTree.countUnivalSubtrees(root);
+		Integer number = uniValTree.findSingleUnivalTrees(root);
+		//System.out.println(no);
+		System.out.println(number);
 
 	}
 	
+	
+
+    private static boolean unival(TreeNode root){
+        if (root == null){
+            return true;
+        }
+        boolean left = unival(root.left);
+        boolean right = unival(root.right);
+
+        if (left && right &&
+                (root.left == null || root.left.data == root.data) &&
+                (root.right == null || root.right.data == root.data)){
+            count++;
+            return true;
+        } else {
+            return false;
+        }
+    }
+    public static int findSingleUnivalTrees(TreeNode n){
+        unival(n);
+        return count;
+    }	
+
 	public int countUnivalSubtrees(TreeNode root) {
-	      if(root == null) return 0;
+	      if(root == null) 
+	    	  return 0;
 	      int count = isUnivalue(root) ? 1 : 0;
 	      return count + countUnivalSubtrees(root.left) + countUnivalSubtrees(root.right);
 	    }
@@ -49,53 +75,16 @@ public class UniValTree {
 	    boolean isUnivalue(TreeNode node){
 	      boolean b = true;
 	      if(node.left != null){
-	        b &= node.data == node.left.data;
-	        b &= isUnivalue(node.left);
+	        b=b & (node.data == node.left.data);
+	        b=b & (isUnivalue(node.left));
 	      }
 	      if(node.right != null){
-	        b &= node.data == node.right.data;
-	        b &= isUnivalue(node.right);
+	        b =b & (node.data == node.right.data);
+	        b =b & isUnivalue(node.right);
 	      }
 	      return b;
 	    }
-	    
-	    /*int count = 0;
-	    boolean all(TreeNode root, int val) {
-	        if (root == null)
-	            return true;
-	        if (!all(root.left, root.val) | !all(root.right, root.val))
-	            return false;
-	        count++;
-	        return root.val == val;
-	    }
-	    public int countUnivalSubtrees(TreeNode root) {
-	        all(root, 0);
-	        return count;
-	    }*/
-	
-	/*public int countUnivalSubtrees(TreeNode root) {
-        int[] arr = new int[1];
-        postOrder(arr, root);
-        return arr[0];
-    }
-    public boolean postOrder (int[] arr, TreeNode node) {
-        if (node == null){
-        	return true;
-        }
-        boolean left = postOrder(arr, node.left);
-        boolean right = postOrder(arr, node.right);
-        if (left && right) {
-            if (node.left != null && node.left.data != node.data){
-            	return false;
-            }
-            if (node.right != null && node.right.data != node.data){
-            	return false;
-            }
-            arr[0]++;
-            return true;
-        }
-        return false;
-    }*/
+	   
 	private Integer uniqueValueCount(TreeNode root) {
 		int counter=0;
 		uniqueValueCount(root,counter);

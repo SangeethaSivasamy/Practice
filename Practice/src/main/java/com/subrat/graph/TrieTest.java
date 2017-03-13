@@ -14,6 +14,8 @@ import java.util.TreeMap;
 from http://alexcode.tumblr.com/question_9
 Given a text file and a word, find the positions that the word occurs in the file.
 We’ll be asked to find the positions of many words in the same file.
+
+https://www.youtube.com/watch?v=AXjmTQ8LEoI&list=PLFpRjNnVMfd9YDXLXj34ZrOwORSDyNT3v
 */
 class Trie{
      Node root = new Node();
@@ -40,8 +42,8 @@ class Trie{
               current=next;
          }
          current.isTerminal=true;
-         /*System.out.println(current.positions);
-         System.out.println(current.children);*/
+         System.out.println(current.positions);
+         System.out.println(current.children);
          return current.positions;
      }
      

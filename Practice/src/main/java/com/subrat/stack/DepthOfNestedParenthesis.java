@@ -47,7 +47,7 @@ public class DepthOfNestedParenthesis {
 	public static void main(String[] args) {
 		DepthOfNestedParenthesis depthOfNestedParenthesis = new DepthOfNestedParenthesis();
 		//Integer depth = depthOfNestedParenthesis.maxDepth("( ((X)) (((Y))) )");
-		Integer depth = depthOfNestedParenthesis.maxDepth("(b) ((c) ()");
+		Integer depth = depthOfNestedParenthesis.maxDepth("(b) ((c) ())");
 		System.out.println(depth);
 	}
 

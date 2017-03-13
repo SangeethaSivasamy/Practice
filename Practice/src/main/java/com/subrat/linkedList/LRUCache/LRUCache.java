@@ -3,11 +3,15 @@
  */
 package com.subrat.linkedList.LRUCache;
 
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
  * @author sparida
+ * 
+ * https://www.quora.com/What-is-the-best-way-to-Implement-an-LRU-Cache
  *
  */
 public class LRUCache {
@@ -48,6 +52,7 @@ public class LRUCache {
     public static void main(String[] args) {
         int cacheSize = 4;
         LRUCache cache = new LRUCache(cacheSize);
+      // List list = Arrays.asList(null,null); //fixed size list
         cache.accessPage(4);
         cache.printCacheState();
         cache.accessPage(2);

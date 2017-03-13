@@ -5,6 +5,11 @@ package com.subrat.array;
 
 /**
  * @author sparida
+ * 
+ * A simple solution is to traverse the complete array and find minimum. This solution requires Θ(n) time.
+We can do it in O(Logn) using Binary Search. If we take a closer look at above examples, we can easily figure out following pattern: 
+The minimum element is the only element whose previous element is greater than it. If there is no such element, then there is no rotation and first element is 
+the minimum element. Therefore, we do binary search for an element which is smaller than the previous element.
  *
  */
 public class MinimumInARoatedSortedArray {

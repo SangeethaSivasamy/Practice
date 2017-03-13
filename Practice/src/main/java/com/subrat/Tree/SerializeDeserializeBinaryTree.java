@@ -5,6 +5,25 @@ package com.subrat.Tree;
 
 /**
  * @author sparida
+ * 
+ * http://javabypatel.blogspot.in/2016/10/serialize-deserialize-binary-tree.html
+ * 
+ * We will read the tree in Pre order traversal and store the node data in a string separated by comma.
+Whenever we will encounter null node we will store "null" string against it as a indication that it is end of Tree.
+Deserialization process is to convert Serialized string back to original Binary Tree
+We use Preorder traversal for serializing the binary tree, So we will use the same traversal for converting string back to Binary tree.
+
+
+We will convert the String into array for accessing Node data.
+
+Start reading array element and for each element create a new Node.
+(Because in Pre order traversal we first read Node data.)
+
+Next element of array will be left child of newly created Node.
+(Because in Pre order traversal we keep reading Left Subtree until we encounter null Node.)
+
+After Left subtree is completed, Next element of array will be Right child of newly created Node.
+(Because in Pre order traversal after left subtree, we keep reading Right Subtree until we encounter null Node.)
  *
  */
 public class SerializeDeserializeBinaryTree {

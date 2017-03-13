@@ -62,7 +62,7 @@ public class PostOrderTraversalWithoutRecursion {
 	            if(temp.leftChild!=null) {
 	                stack.push(temp.leftChild);
 	                //below line is assigned to null, otherwise, the while loop will run in a infinite loop and stack will naver be empty
-	               temp.leftChild = null;
+	              temp.leftChild = null;
 	            }
 	        }
 	    }

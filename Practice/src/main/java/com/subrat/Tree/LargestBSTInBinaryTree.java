@@ -3,6 +3,8 @@
  */
 package com.subrat.Tree;
 
+import com.subrat.Tree.MergeTwoBST.Node;
+
 /**
  * @author sparida
  *
@@ -12,7 +14,7 @@ package com.subrat.Tree;
  * binary tree.
  * 
  * Traverse tree in post order fashion. Left and right nodes return 4 piece of
- * information to root which isBST, size of max BST, min and max in those
+ * information to root which are--> isBST, size of max BST, min and max in those
  * subtree. If both left and right subtree are BST and this node data is greater
  * than max of left and less than min of right then it returns to above level
  * left size + right size + 1 and new min will be min of left side and new max
@@ -74,13 +76,13 @@ public class LargestBSTInBinaryTree {
 
 	public static void main(String args[]) {
 		/* Let us construct the following Tree      
-		50
+		   50
         /      \
        10        60
       /  \       /  \
      5   20    55    70
-    /     /  \
-   45   65    80
+               /    /  \
+             45   65    80
     */
 
 		LargestBSTInBinaryTree tree = new LargestBSTInBinaryTree();

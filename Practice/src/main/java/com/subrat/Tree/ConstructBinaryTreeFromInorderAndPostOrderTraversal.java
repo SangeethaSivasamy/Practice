@@ -22,8 +22,8 @@ public class ConstructBinaryTreeFromInorderAndPostOrderTraversal {
 	 }
 	 
 	 
-	 private static Node constructTree(int[] inOrder, int[] preorder) {
-	  return constructTreeFromInOrderAndPostOrder(inOrder, 0, inOrder.length-1, preorder, 0, preorder.length-1);
+	 private static Node constructTree(int[] inOrder, int[] postOrder) {
+	  return constructTreeFromInOrderAndPostOrder(inOrder, 0, inOrder.length-1, postOrder, 0, postOrder.length-1);
 	 }
 	 
 	 private static Node constructTreeFromInOrderAndPostOrder(int[] inOrder, int inStart, int inEnd, int[] postOrder, int postStart, int postEnd) {

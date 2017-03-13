@@ -61,4 +61,5 @@ class ArrayContainer implements Comparable<ArrayContainer> {
 	public int compareTo(ArrayContainer o) {
 		return this.arr[this.index] - o.arr[o.index];
 	}
+
 }

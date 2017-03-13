@@ -3,8 +3,6 @@
  */
 package com.subrat.linkedList;
 
-import com.subrat.linkedList.RemoveLoopInLinkList.Node;
-
 /**
  * @author sparida
  *

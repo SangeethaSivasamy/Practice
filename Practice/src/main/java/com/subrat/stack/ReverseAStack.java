@@ -18,7 +18,8 @@ reverse(1->2->3) = 3->2->1
 public class ReverseAStack {
 	
 	public Stack<Integer> reverse(Stack<Integer> stack) {
-	    if (stack.isEmpty()) return stack;
+	    if (stack.isEmpty()) 
+	    	return stack;
 	    int temp = stack.pop();
 	    reverse(stack);
 	    insertAtBottom(stack, temp);

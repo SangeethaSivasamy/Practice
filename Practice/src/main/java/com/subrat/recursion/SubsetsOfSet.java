@@ -52,6 +52,11 @@ public class SubsetsOfSet {
 		SubsetsOfSet subsetsOfSet = new SubsetsOfSet();
 		int[] array = new int[]{1,2,3};
 		List<List<Integer>> result =subsetsOfSet.subsets(array);
+		for (List<Integer> list : result) {
+			for (Integer integer : list) {
+				System.out.println(integer+",");
+			}
+		}
 
 	}
 

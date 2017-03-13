@@ -33,7 +33,7 @@ public class DoublePower_BetterWay {
 	 */
 	public static void main(String[] args) {
 		DoublePower_BetterWay doublePower_BetterWay = new DoublePower_BetterWay();
-		Double result = doublePower_BetterWay.pow(5, 3);
+		Double result = doublePower_BetterWay.pow(2, 5);
 		System.out.println(result);
 	}
 

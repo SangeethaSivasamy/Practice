@@ -4,7 +4,10 @@
 package com.subrat.Tree;
 
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
+
+
 
 /**
  * @author sparida
@@ -130,8 +133,11 @@ public class BinaryTreeTraversal {
 		}
 		
 	}
+	
+	
 
-	private static class Tree{
+
+	public static class Tree{
 		private Integer data;
 		private Tree left;
 		private Tree right;
@@ -170,5 +176,8 @@ public class BinaryTreeTraversal {
 		}
 		
 	}
+	
+
+
 
 }

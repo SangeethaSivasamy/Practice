@@ -46,8 +46,8 @@ public class ThreeSumProblem {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		//int[] array = new int[] { -1, 0, 1, 2, -1, -4 };
-		int[] array = new int[] {-2,-1,0,1,2};
+		int[] array = new int[] { -1, 0, 1, 2, -1, -4 };
+		//int[] array = new int[] {-2,-1,0,1,2};
 		ThreeSumProblem threeSumProblem = new ThreeSumProblem();
 		List<List<Integer>> listOfList = threeSumProblem.threeSum(array);
 		for (int i = 0; i < listOfList.size(); i++) {

@@ -16,7 +16,7 @@ public class FiboTopDown {
 	 */
 	public static void main(String[] args) {
 		FiboTopDown fibo = new FiboTopDown();
-		Integer value = fibo.calculateFobi(5);
+		Integer value = fibo.calculateFobi(3);
 		System.out.println(value);
 	}
 
