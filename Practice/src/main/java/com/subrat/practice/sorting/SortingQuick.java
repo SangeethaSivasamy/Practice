@@ -20,7 +20,7 @@ public class SortingQuick {
 	public static void main(String[] args) {
 		SortingQuick sort = new SortingQuick();
 		sort.doSort(array);
-
+		System.out.println(Arrays.toString(array));
 	}
 
 	private void doSort(int[] array) {
@@ -33,7 +33,7 @@ public class SortingQuick {
 			int partitionIndex = partition(array,start,end);
 			sorting(array, start, partitionIndex-1);
 			sorting(array, partitionIndex+1, end);
-			System.out.println(Arrays.toString(array));
+			//System.out.println(Arrays.toString(array));
 		}
 		
 	}

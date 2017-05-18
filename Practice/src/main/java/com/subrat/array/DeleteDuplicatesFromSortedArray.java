@@ -22,7 +22,7 @@ public class DeleteDuplicatesFromSortedArray {
 
     public static void main(String[] args) {
         
-    	int[] arr= new int[]{2,3,5,5,7,11,11,11,13};
+    	int[] arr= new int[]{2,3,3,3,3,3,3,5,5,7,10,11,12,13};
     	int arryLength = removeDuplicates(arr);
     	System.out.println(Arrays.toString(Arrays.copyOf(arr, arryLength)));
         

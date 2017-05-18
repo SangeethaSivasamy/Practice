@@ -12,6 +12,8 @@ package com.subrat.Tree;
  */
 public class MaximumDepthOfBinaryTree {
 	
+	private static TreeNode root;
+	
 	public int maxDepth(TreeNode root) {
 
         if (root == null) {
@@ -27,7 +29,9 @@ public class MaximumDepthOfBinaryTree {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		
+		MaximumDepthOfBinaryTree maximumDepthOfBinaryTree = new MaximumDepthOfBinaryTree();
+		int result = maximumDepthOfBinaryTree.maxDepth(root);
+		System.out.println(result);
 
 	}
 	

@@ -8,26 +8,31 @@ package com.subrat.Tree;
  */
 public class FindDiameterOfBinaryTree {
 	 
-	 private Node rootNode;
+	 private static Node rootNode;
 	 
 	 public static void main(String[] args) {
-	  new FindDiameterOfBinaryTree();
+		 
+		 FindDiameterOfBinaryTree findDiameterOfBinaryTree = new FindDiameterOfBinaryTree();
+	 // new FindDiameterOfBinaryTree();
+	// }
+	 
+	// public FindDiameterOfBinaryTree(){
+		 findDiameterOfBinaryTree.addNode(rootNode, 100);
+		 findDiameterOfBinaryTree.addNode(rootNode, 90);
+		 findDiameterOfBinaryTree.addNode(rootNode, 150);
+		 findDiameterOfBinaryTree.addNode(rootNode, 80);
+		 findDiameterOfBinaryTree.addNode(rootNode, 95);
+		 findDiameterOfBinaryTree.addNode(rootNode, 70);
+		 findDiameterOfBinaryTree.addNode(rootNode, 92);
+		 findDiameterOfBinaryTree.addNode(rootNode, 60);
+		 findDiameterOfBinaryTree.addNode(rootNode, 94);
+	 
+	 // System.out.println(getDiameterOfBinaryTree(rootNode));
+	  
+	  
+	  System.out.println(findDiameterOfBinaryTree.diameter());
 	 }
-	 
-	 public FindDiameterOfBinaryTree(){
-	  addNode(rootNode, 100);
-	  addNode(rootNode, 90);
-	  addNode(rootNode, 150);
-	  addNode(rootNode, 80);
-	  addNode(rootNode, 95);
-	  addNode(rootNode, 70);
-	  addNode(rootNode, 92);
-	  addNode(rootNode, 60);
-	  addNode(rootNode, 94);
-	 
-	  System.out.println(getDiameterOfBinaryTree(rootNode));
-	 }
-	 
+	 //O(n2)
 	 private int getDiameterOfBinaryTree(Node node){
 	  if(node == null){
 	   return 0;
@@ -42,6 +47,32 @@ public class FindDiameterOfBinaryTree {
 	 
 	  return max(diameterOfNode, max(leftDiameter, rightDiameter));
 	 }
+	 
+	 int diameter()
+	    {
+	        Height height = new Height();
+	        return diameterOpt(rootNode, height);
+	    }
+
+	 //O(n)
+	int diameterOpt(Node root, Height height) {
+
+		Height lh = new Height();
+		Height rh = new Height();
+
+		if (root == null) {
+			height.h = 0;
+			return 0;
+		}
+
+		int ldiameter = diameterOpt(root.left, lh);
+		int rdiameter = diameterOpt(root.right, rh);
+
+		height.h = Math.max(lh.h, rh.h) + 1;
+
+		return Math.max(lh.h + rh.h + 1, Math.max(ldiameter, rdiameter));
+	}
+	 
 	  
 	 private int height(Node node){
 	  if( node == null){
@@ -120,6 +151,9 @@ public class FindDiameterOfBinaryTree {
 			return "Node [data=" + data + ", left=" + left + ", right=" + right + "]";
 		}
 		 
+	 }
+	 class Height{
+		 int h;
 	 }
 	 
 	}

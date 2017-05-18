@@ -17,7 +17,7 @@ public class IsomorphicString {
 	 */
 	public static void main(String[] args) {
 		IsomorphicString isomorphicString = new IsomorphicString();
-		Boolean isIsomorphic = isomorphicString.isIsomorphic("egg","adf");
+		Boolean isIsomorphic = isomorphicString.isIsomorphic("eggpp","addqt");
 		System.out.println(isIsomorphic);
 
 	}

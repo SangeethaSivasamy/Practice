@@ -37,17 +37,43 @@ public class PrintRootToLeaf {
 	 */
 	public static void main(String[] args) {
 		PrintRootToLeaf printRootToLeaf = new PrintRootToLeaf();
-		printRootToLeaf.root = new TreeNode(1);
-		printRootToLeaf.root.left=new TreeNode(2);
-		printRootToLeaf.root.right=new TreeNode(3);
-		printRootToLeaf.root.left.left=new TreeNode(4);
+		printRootToLeaf.root = new TreeNode(6);
+		printRootToLeaf.root.left=new TreeNode(3);
+		printRootToLeaf.root.right=new TreeNode(5);
+		printRootToLeaf.root.right.right=new TreeNode(4);
+		printRootToLeaf.root.left.left=new TreeNode(2);
 		printRootToLeaf.root.left.right=new TreeNode(5);
-		printRootToLeaf.printAllPathRecursion(root,list);
-		printRootToLeaf.printAllPathWithoutRecursion(root);
+		printRootToLeaf.root.left.right.left=new TreeNode(7);
+		printRootToLeaf.root.left.right.right=new TreeNode(4);
+		printRootToLeaf.printAllPathRecursion_2ndWay(root,list);
+		//printRootToLeaf.printAllPathWithoutRecursion(root);
+		
 
 	}
 	
 	private void printAllPathRecursion(TreeNode root, List<Integer> list) {
+		
+		if(root==null){
+			return;
+		}
+		
+		list.add(root.data);
+		if(root.left==null && root.right==null){
+			for (Integer integer : list) {
+				System.out.print(integer);
+			}
+			System.out.println();
+		}else{
+			printAllPathRecursion(root.left, new ArrayList(list));
+			//list.remove(list.size()-1);
+			printAllPathRecursion(root.right, new ArrayList(list));
+			//list.remove(list.size()-1);
+		}
+		
+		
+	}
+	
+private void printAllPathRecursion_2ndWay(TreeNode root, List<Integer> list) {
 		
 		if(root==null){
 			return;

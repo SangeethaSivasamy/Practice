@@ -3,6 +3,7 @@
  */
 package com.subrat.practice.sorting;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -36,7 +37,7 @@ public class TwoSumProblem {
 		int[] array = new int[]{-9,-4,-2,3,4,5,6,7,9,2};
 		TwoSumProblem twoSumProblem = new TwoSumProblem();
 		int[] result =twoSumProblem.twoSum(array, 0);
-		System.out.println();
+		System.out.println(Arrays.toString(result));
 
 	}
 

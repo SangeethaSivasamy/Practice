@@ -45,7 +45,7 @@ public class LongestCommonPrefix {
 		LongestCommonPrefix longestCommonPrefix = new LongestCommonPrefix();
 		String[] str = new String[3];
 		str[0]="abcd";
-		str[1]="amce";
+		str[1]="abce";
 		str[2]="ab";
 		String result = longestCommonPrefix.longestCommonPrefix(str);
 		System.out.println(result);

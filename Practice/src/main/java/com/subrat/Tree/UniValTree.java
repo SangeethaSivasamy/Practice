@@ -40,10 +40,13 @@ public class UniValTree {
 		//System.out.println(no);
 		System.out.println(number);
 
-	}
+	}/*
 	
-	
-
+			1
+		2        3   	
+	2       2  3     3
+5	   5    4    4 3    3
+*/
     private static boolean unival(TreeNode root){
         if (root == null){
             return true;

@@ -11,7 +11,7 @@
 class HashMapCustom<K, V> {
      
      private Entry<K,V>[] table;   //Array of Entry.
-     private int capacity= 4;  //Initial capacity of HashMap
+     private int capacity= 10;  //Initial capacity of HashMap
      
      static class Entry<K, V> {
          K key;
@@ -179,6 +179,8 @@ public class HashMapCustomApp {
            hashMapCustom.put(30, 151);
            hashMapCustom.put(33, 15);
            hashMapCustom.put(35, 89);
+           hashMapCustom.put(25, 122);
+           hashMapCustom.put(21, 123);
  
            System.out.println("value corresponding to key 21="
                         + hashMapCustom.get(21));

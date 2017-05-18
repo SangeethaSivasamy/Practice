@@ -112,8 +112,8 @@ public class FrequencySorting {
 	 */
 	public static void main(String[] args) {
 		FrequencySorting frequencySorting = new FrequencySorting();
-		//String result = frequencySorting.frequencySort("hhhccaazzeessqs");
-		String result = frequencySorting.frequencySort_2ndWay("hhhccaazzeessqs");
+		String result = frequencySorting.frequencySort("hhhccaazzeessqs");
+		//String result = frequencySorting.frequencySort_2ndWay("hhhccaazzeessqs");
 		System.out.println(result);
 
 	}

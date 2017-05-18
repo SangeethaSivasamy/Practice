@@ -8,9 +8,46 @@ import java.util.List;
 
 /**
  * @author sparida
+ * 
+ * https://www.youtube.com/watch?v=siKFOI8PNKM
  *
  */
 public class PrintSpiralOrderMatrix {
+	
+	private static void printSpiral(int[][] arr, int m,int n){ //m is no of rows and n is no of columns
+		
+		int T=0,B=m-1,L=0,R=n-1,dir=0;
+		while(T<=B && L<=R){
+			if(dir==0){
+				for (int i = L; i <=R; i++) {
+					System.out.print(arr[T][i]);
+					T++;
+					//dir=1;
+				}
+			}else if(dir==1){
+				for (int i = T; i <=B; i++) {
+					System.out.print(arr[i][R]);
+					R--;
+					//dir=2;
+				}
+			}else if(dir==2){
+				for (int i = R; i >= L; i--) {
+					System.out.print(arr[B][i]);
+					B--;
+					//dir=3;
+				}
+			}else if(dir==3){
+				for (int i = B; i >=T; i--) {
+					System.out.print(arr[i][L]);
+					L++;
+					//dir=0;
+					
+				}
+			}
+			dir=(dir+1)%4;
+		}
+		
+	}
 
     public static List<Integer> formSpiral(int[][] arr){
 

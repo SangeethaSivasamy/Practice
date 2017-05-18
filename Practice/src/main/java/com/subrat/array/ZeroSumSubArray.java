@@ -38,7 +38,7 @@ public class ZeroSumSubArray {
 
     public static void main(String[] args) {
 
-        int[] arr = {4, 2, -3, 1, 6};//{1, 2, -5, 1, 2, -1};
+        int[] arr = {1, 2, -5, 1, 2, -1};//{4, 2, -3, 1, 6};
     	//int[] arr = {5, 1, 2, -3, 7, -4};
         System.out.println(Arrays.toString(zeroSum(arr)));
 

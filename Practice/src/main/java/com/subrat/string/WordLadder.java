@@ -12,7 +12,8 @@ import java.util.Set;
  * 
  * http://www.programcreek.com/2012/12/leetcode-word-ladder/
  * 
- * Given two words (start and end), and a dictionary, find the length of shortest transformation sequence from start to end, such that only one letter can be changed at a time and each intermediate word must exist in the dictionary. For example, given:
+ * Given two words (start and end), and a dictionary, find the length of shortest transformation sequence from start to end, such that only one letter 
+ * can be changed at a time and each intermediate word must exist in the dictionary. For example, given:
 
 start = "hit"
 end = "cog"

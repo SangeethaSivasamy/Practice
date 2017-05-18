@@ -3,6 +3,8 @@
  */
 package com.subrat.array;
 
+import java.util.Arrays;
+
 /**
  * @author sparida
  *
@@ -23,6 +25,7 @@ public class ReverseWordsInASentence {
 	    reverse(s, i, s.length-1);
 	 
 	    reverse(s, 0, s.length-1);
+	    System.out.println(Arrays.toString(s));
 	}
 	 
 	public void reverse(char[] s, int i, int j){
